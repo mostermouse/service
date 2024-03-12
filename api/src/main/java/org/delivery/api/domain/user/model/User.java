@@ -1,7 +1,5 @@
-package org.delivery.api.domain.controller.model;
+package org.delivery.api.domain.user.model;
 
-import com.fasterxml.jackson.databind.PropertyNamingStrategies;
-import com.fasterxml.jackson.databind.annotation.JsonNaming;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -18,14 +16,21 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-
-public class UserResponse {
+public class User {
     private Long id;
+
     private String name;
+
     private String email;
+
+    private String password;
+
     private UserStatus status;
+
     private String address;
+
     private LocalDateTime registeredAt;
     private LocalDateTime unregisteredAt;
     private LocalDateTime lastLoginAt;
+
 }

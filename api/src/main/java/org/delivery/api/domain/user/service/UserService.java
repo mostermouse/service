@@ -1,4 +1,4 @@
-package org.delivery.api.domain.server;
+package org.delivery.api.domain.user.service;
 
 import lombok.RequiredArgsConstructor;
 import org.delivery.api.common.error.ErrorCode;
@@ -46,6 +46,15 @@ public class UserService {
                email,
                password,
                UserStatus.REGISTERED
+        ).orElseThrow(() -> new ApiException(UserErrorCode.USER_NOT_FOUND));
+    }
+
+    public UserEntity getUserWithThrow(
+            Long userId
+    ){
+        return userRepository.findFirstByIdAndStatusOrderByIdDesc(
+                userId,
+                UserStatus.REGISTERED
         ).orElseThrow(() -> new ApiException(UserErrorCode.USER_NOT_FOUND));
     }
 }
