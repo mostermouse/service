@@ -56,12 +56,12 @@ public class UserBusiness {
     }
 
     public UserResponse me(
-            User user
-            ) {
+            Long userId
+    ) {
         //var requestContext = Objects.requireNonNull(RequestContextHolder.getRequestAttributes());
-       // var userId = requestContext.getAttribute("userId" , RequestAttributes.SCOPE_REQUEST);
+        //var userId = requestContext.getAttribute("userId", RequestAttributes.SCOPE_REQUEST);
 
-       var userEntity = userService.getUserWithThrow(user.getId());
+        var userEntity = userService.getUserWithThrow(userId);
         var response = userConverter.toResponse(userEntity);
         return response;
     }

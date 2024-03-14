@@ -24,10 +24,10 @@ public class UserSessionResolver implements HandlerMethodArgumentResolver {
     public boolean supportsParameter(MethodParameter parameter) {
         //지원하는 파라미터 체크 , 어노테이션 체크
         // 1. 어노테이션 있는지 체크
-        var annotation = parameter.hasParameterAnnotations(UserSession.class);
+        var annotation = parameter.getParameterAnnotation(UserSession.class);
         //2.파라미터의 타입 체크
         var parameterType = parameter.getParameterType().equals(User.class);
-        return (annotation && parameterType);
+        return (annotation != null && parameterType);
     }
 
     @Override
