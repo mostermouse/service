@@ -18,4 +18,6 @@ public interface UserOrderRepository extends JpaRepository<UserOrderEntity, Long
 
     List<UserOrderEntity> findAllByUserIdAndStatusInOrderByIdDesc(Long userId, List<UserOrderStatus> status);
 
+    Optional<UserOrderEntity> findAllByIdAndUserId(Long id, Long userId);
+
 }
