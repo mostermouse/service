@@ -17,6 +17,7 @@ public class Api<T> {
     @Valid
     private T body;
 
+
     public static <T> Api<T> OK(T data){
         var api = new Api<T>();
         api.result = Result.ok();
