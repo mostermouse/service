@@ -20,17 +20,28 @@ public class AuthorizationService implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         var storeUserEntity = storeUserService.getRegisterUser(username);
-
+        var storeEntity = storeRepository.findFirstByIdAndStatusOrderByIdDesc(
+                storeUserEntity.get().getStoreId(),
+                StoreStatus.REGISTERED
+        );
 
         return storeUserEntity.map(it -> {
 
-            var user = User.builder()
-                    .username(it.getEmail())
+            var userSession = UserSession.builder()
+                    .userId(it.getId())
+                    .email(it.getEmail())
                     .password(it.getPassword())
-                    .roles(it.getRole().toString())
+                    .status(it.getStatus())
+                    .role(it.getRole())
+                    .registeredAt(it.getRegisteredAt())
+                    .lastLoginAt(it.getLastLoginAt())
+                    .unregisteredAt(it.getUnregisteredAt())
+
+                    .storeId(storeEntity.get().getId())
+                    .storeName(storeEntity.get().getName())
                     .build();
 
-            return user;
+            return userSession;
         }).orElseThrow(() -> new UsernameNotFoundException(username));
 
     }

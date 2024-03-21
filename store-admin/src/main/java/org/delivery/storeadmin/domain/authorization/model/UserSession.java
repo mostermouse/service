@@ -54,7 +54,7 @@ public class UserSession implements UserDetails {
 
     @Override
     public boolean isAccountNonExpired() {
-        return this.status == StoreUserStatus.UNREGISTERED;
+        return this.status == StoreUserStatus.REGISTERED;
     }
 
     @Override
