@@ -13,14 +13,18 @@ import java.util.List;
 public class UserOrderConverter {
     public UserOrderEntity toEntity(
             User user,
+            Long storeId,
             List<StoreMenuEntity> storeMenuEntityList
     ){
+
+
         var totalAmount = storeMenuEntityList.stream()
                 .map(it -> it.getAmount())
                 .reduce(BigDecimal.ZERO, BigDecimal::add);
 
         return UserOrderEntity.builder()
                 .userId(user.getId())
+                .storeId(storeId)
                 .amount(totalAmount)
                 .build()
                 ;
