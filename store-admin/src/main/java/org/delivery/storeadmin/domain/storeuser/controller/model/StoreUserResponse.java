@@ -1,12 +1,9 @@
-package org.delivery.storeadmin.domain.user.controller.model;
+package org.delivery.storeadmin.domain.storeuser.controller.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.extern.java.Log;
-import org.apache.catalina.Store;
-import org.apache.catalina.User;
 import org.delivery.db.storeuser.enums.StoreUserRole;
 import org.delivery.db.storeuser.enums.StoreUserStatus;
 
