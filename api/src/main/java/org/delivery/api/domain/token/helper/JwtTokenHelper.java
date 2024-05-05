@@ -90,13 +90,13 @@ public class JwtTokenHelper implements TokenHelperIfs {
 
         } catch (Exception e) {
             if (e instanceof SignatureException) {
-                //토큰이 유효하지 않을 때
+                //トークンが無効な場合
                 throw new ApiException(TokenErrorCode.INVALID_TOKEN, e);
             } else if (e instanceof ExpiredJwtException) {
-                //만료된 토큰
+                //期限切れのトークン
                 throw new ApiException(TokenErrorCode.EXPIRED_TOKEN, e);
             } else {
-                //그 외 에러
+                //その他エラー
                 throw new ApiException(TokenErrorCode.TOKEN_EXCEPTION, e);
             }
         }

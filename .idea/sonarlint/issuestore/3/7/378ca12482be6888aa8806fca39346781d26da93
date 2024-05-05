@@ -1,0 +1,13 @@
+
+j
+java:S1128"TRemove this unused import 'com.fasterxml.jackson.databind.PropertyNamingStrategies'.(­ðÇ×
+f
+java:S1128"QRemove this unused import 'com.fasterxml.jackson.databind.annotation.JsonNaming'.(Ó£’o
+^
+java:S1128	"HRemove this unused import 'org.delivery.api.common.annotation.Business'.(Õ®µ˜
+J
+java:S1128"5Remove this unused import 'javax.persistence.Column'.(ìûæH
+R
+java:S1128"7Remove this unused import 'javax.persistence.EnumType'.(ˆ«¨–üÿÿÿÿ
+T
+java:S1128"9Remove this unused import 'javax.persistence.Enumerated'.(¡ùþßûÿÿÿÿ

@@ -20,7 +20,7 @@ public class Result {
         return Result.builder()
                 .resultCode(ErrorCode.OK.getErrorCode())
                 .resultMessage(ErrorCode.OK.getDescription())
-                .resultDescription("성공")
+                .resultDescription("成功")
                 .build();
     }
 
@@ -28,7 +28,7 @@ public class Result {
         return Result.builder()
                 .resultCode(errorCodeIfs.getErrorCode())
                 .resultMessage(errorCodeIfs.getDescription())
-                .resultDescription("성공")
+                .resultDescription("成功")
                 .build();
     }
 

@@ -42,7 +42,7 @@ public class UserOrderService {
         return userOrderRepository.findAllByUserIdAndStatusInOrderByIdDesc(userId, statusList);
     }
 
-    //주문
+    //注文
     public UserOrderEntity order(
             UserOrderEntity userOrderEntity
     ) {
@@ -54,7 +54,7 @@ public class UserOrderService {
                 }).orElseThrow(() -> new ApiException(ErrorCode.NULL_POINT));
     }
 
-    //현재 진행중인 내역
+    //現在進行中の履歴
     public List<UserOrderEntity> current(Long userId) {
         return getUserOrderList(
                 userId,
@@ -67,7 +67,7 @@ public class UserOrderService {
         );
     }
 
-    //과거 주문한 내역
+    //過去に注文した履歴
     public List<UserOrderEntity> history(Long userId) {
         return getUserOrderList(
                 userId,
@@ -77,31 +77,31 @@ public class UserOrderService {
         );
     }
 
-    //상태 변경
+    //状態の変更
     public UserOrderEntity setStatus(UserOrderEntity userOrderEntity, UserOrderStatus status) {
         userOrderEntity.setStatus(status);
         return userOrderRepository.save(userOrderEntity);
     }
 
-    //주문 확인
+    //注文確認
     public UserOrderEntity accept(UserOrderEntity userOrderEntity) {
         userOrderEntity.setAcceptedAt(LocalDateTime.now());
         return setStatus(userOrderEntity, UserOrderStatus.ACCEPT);
     }
 
-    //조리 시작
+    //調理開始
     public UserOrderEntity cooking(UserOrderEntity userOrderEntity) {
         userOrderEntity.setCookingStartedAt(LocalDateTime.now());
         return setStatus(userOrderEntity, UserOrderStatus.COOKING);
     }
 
-    //배달 시작
+    //配達開始
     public UserOrderEntity delivery(UserOrderEntity userOrderEntity) {
         userOrderEntity.setDeliveryStartedAt(LocalDateTime.now());
         return setStatus(userOrderEntity, UserOrderStatus.DELIVERY);
     }
 
-    //배달 완료
+    //配達完了
     public UserOrderEntity receive(UserOrderEntity userOrderEntity) {
         userOrderEntity.setReceivedAt(LocalDateTime.now());
         return setStatus(userOrderEntity, UserOrderStatus.RECEIVE);

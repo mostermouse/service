@@ -1,0 +1,19 @@
+
+¨
+java:S1488&"`Immediately return this expression instead of assigning it to the temporary variable "response".(Àšıøùÿÿÿÿ8á†ğ‹ã1J$8a3a1636-f80e-4d12-8f43-73aca386f4cd
+¨
+java:S14886"eImmediately return this expression instead of assigning it to the temporary variable "tokenResponse".(´ŸÎ8á†ğ‹ã1J$30aaf7a4-0f18-419a-aa8e-bdea09bcd6bf
+¨
+java:S1488C"`Immediately return this expression instead of assigning it to the temporary variable "response".(š½¾öşÿÿÿÿ8ö—İàã1J$d8a1def6-17be-4304-88a6-0ef407fc1624
+~	java:S125,"<This block of commented-out lines of code should be removed.(æËùÿ8ç†ğ‹ã1J$b989f473-cdf2-4d24-acc4-c84e1a71fdb9
+}	java:S125?"<This block of commented-out lines of code should be removed.(ı¿K8ÿğüàã1J$d2f15aa4-cc18-4761-9863-c70e84d374d2
+
+java:S1128"KRemove this unused import 'org.delivery.api.common.annotation.UserSession'.(ŸÆªÙ8ñáıàã1J$fdfe6daa-078a-4af7-8a65-7137217ce0a2
+Œ
+java:S1128"DRemove this unused import 'org.delivery.api.domain.user.model.User'.(Óú€Óúÿÿÿÿ8ñáıàã1J$9b6a31cb-f7af-4d62-9bc0-83187517f1ad
+™
+java:S1128"VRemove this unused import 'org.springframework.web.context.request.RequestAttributes'.(¢“…°8ñáıàã1J$f1e8974e-0eea-4d1b-b5f6-dd25a025efb2
+œ
+java:S1128"YRemove this unused import 'org.springframework.web.context.request.RequestContextHolder'.(ºãê8ñáıàã1J$50bccfa8-806c-46b4-9bc9-057859d88d99
+q
+java:S1128".Remove this unused import 'java.util.Objects'.(¼¸õ›8ñáıàã1J$f1f8d6ca-f25a-48d8-915a-993606cb96cc

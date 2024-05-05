@@ -1,0 +1,6 @@
+
+š	java:S116"SRename this field "OPEN_API" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ù”ö¶øÿÿÿÿ8§›ç‹ã1J$faae113a-8b50-4ff4-bb5f-ccce22e3bedf
+œ	java:S116"ZRename this field "DEFAULT_EXCLUDE" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¹îØ¿8§›ç‹ã1J$06578527-2083-491c-8fbb-20d9c857e139
+”	java:S116"RRename this field "SWAGGER" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ˆÖÑå8§›ç‹ã1J$14ad9239-c601-4ad1-b7ea-9fc66d6cb17f
+©
+java:S1128"fRemove this unused import 'org.springframework.web.servlet.config.annotation.InterceptorRegistration'.(Ê£8å£ªå1J$18f47934-c47c-4cad-911f-77dda2a35247

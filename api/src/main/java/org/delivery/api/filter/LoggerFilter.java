@@ -23,7 +23,7 @@ public class LoggerFilter implements Filter {
 
         chain.doFilter(req, res);
 
-        //requset 정보
+        //requset 情報
 
         var hearderNames = req.getHeaderNames();
         var heardValues = new StringBuilder();
@@ -42,7 +42,7 @@ public class LoggerFilter implements Filter {
         log.info(">>>>> uri : {}, method : {}, header : {} , body : {}", uri, method, heardValues, requstBody);
 
 
-        //response 정보
+        //response 情報
         var responseHeaderValues = new StringBuilder();
         res.getHeaderNames().forEach(headerKey -> {
             var headerValue = res.getHeader(headerKey);

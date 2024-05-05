@@ -25,16 +25,16 @@ public class AuthorizationInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         log.info("Authorization Interceptor url : {}" , request.getRequestURI());
-        //WEB , chrome 의 경우 get, post options = pass
+        //WEB 、 chrome の場合 get, post options = pass
         if(HttpMethod.OPTIONS.matches(request.getMethod())){
             return true;
         }
-        //js , html , png resource 를 요청하는 경우 =pass
+        //js、html、pngリソースを要求する場合=pass
         if(handler instanceof ResourceHttpRequestHandler){
             return true;
         }
 
-        // TODO header 검증
+        // TODO header 検証
         var accessToken = request.getHeader("authorization-token");
         if(accessToken == null){
             throw new ApiException(TokenErrorCode.AUTHORIZATION_TOKEN_NOT_FOUND);
@@ -45,6 +45,6 @@ public class AuthorizationInterceptor implements HandlerInterceptor {
             requestContext.setAttribute("userId", userId, RequestAttributes.SCOPE_REQUEST);
             return true;
         }
-        throw new ApiException(ErrorCode.BAD_REQUEST, "인증 실패");
+        throw new ApiException(ErrorCode.BAD_REQUEST, "認証失敗");
     }
 }

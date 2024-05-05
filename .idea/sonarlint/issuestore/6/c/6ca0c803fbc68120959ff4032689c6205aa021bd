@@ -1,0 +1,7 @@
+
+¦
+java:S1488&"^Immediately return this expression instead of assigning it to the temporary variable "userId".(ˆÕ›æüÿÿÿÿ8‹“éŠã1J$7f59a5a0-c753-4c98-b9f5-825fa09b0aea
+›
+java:S1602"SRemove useless curly braces around statement and then remove useless return keyword(²é¸˜þÿÿÿÿ8ý³©Šã1J$d497d3b7-7558-4419-b5b5-33fceb92f328
+†
+java:S1612">Replace this lambda with method reference 'BaseEntity::getId'.(²é¸˜þÿÿÿÿ8þ³©Šã1J$a947037a-eac3-4646-b6ff-ea650b755839

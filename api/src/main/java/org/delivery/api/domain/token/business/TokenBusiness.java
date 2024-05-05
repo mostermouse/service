@@ -18,9 +18,9 @@ public class TokenBusiness {
     private final TokenConverter tokenConverter;
 
     /*
-     * 1. user entity user id 추출
-     * 2. access, refresh token 발행
-     * 3. converter -> token response로 변경*/
+     * 1. user entity user id 抽出
+     *2. access, refresh token 発行
+     * 3. converter -> token responseに変更*/
     public TokenResponse issueToken(UserEntity userEntity) {
         return Optional.ofNullable(userEntity)
                 .map(ue -> {

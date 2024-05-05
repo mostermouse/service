@@ -6,8 +6,8 @@ import lombok.AllArgsConstructor;
 
 @AllArgsConstructor
 public enum UserOrderMenuStatus {
-    REGISTERED("등록"),
-    UNREGISTERED("해지"),
+    REGISTERED("登録"),
+    UNREGISTERED("キャンセル"),
     ;
     /*UserOrderStatus(String description){
      this.description = description;

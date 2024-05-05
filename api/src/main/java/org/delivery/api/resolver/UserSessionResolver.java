@@ -19,28 +19,28 @@ import org.springframework.web.method.support.ModelAndViewContainer;
 @RequiredArgsConstructor
 public class UserSessionResolver implements HandlerMethodArgumentResolver {
     private final UserService userService;
-    //AOP   방식
+    //AOP   方法
     @Override
     public boolean supportsParameter(MethodParameter parameter) {
-        //지원하는 파라미터 체크 , 어노테이션 체크
-        // 1. 어노테이션 있는지 체크
+        //サポートするパラメータチェック、アノテーションチェック
+        // 1. アノテーションを確認
         var annotation = parameter.getParameterAnnotation(UserSession.class);
-        //2.파라미터의 타입 체크
+        //2.パラメータのタイプチェック
         var parameterType = parameter.getParameterType().equals(User.class);
         return (annotation != null && parameterType);
     }
 
     @Override
     public Object resolveArgument(MethodParameter parameter, ModelAndViewContainer mavContainer, NativeWebRequest webRequest, WebDataBinderFactory binderFactory) throws Exception {
-        //support parameter 에서 true 반환시 여기 실행
+        //support parameter から true が返されたときにここで実行
 
-        //request context holder에서 찾아오기
+        //request context holderから取得
         var requestContext = RequestContextHolder.getRequestAttributes();
         var userId = requestContext.getAttribute("userId", RequestAttributes.SCOPE_REQUEST);
 
         var userEntity = userService.getUserWithThrow(Long.parseLong(userId.toString()));
 
-        //사용자 정보 셋팅
+        //ユーザー情報の設定
         return User.builder()
                 .id(userEntity.getId())
                 .name(userEntity.getName())

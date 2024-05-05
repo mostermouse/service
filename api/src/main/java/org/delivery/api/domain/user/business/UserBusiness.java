@@ -23,8 +23,10 @@ public class UserBusiness {
     private final UserConverter userConverter;
     private final TokenBusiness tokenBusiness;
 
-    /*사용자에 대한 가입처리 로직
-    1.repuest -> entity
+    /*
+    ユーザーの購読処理ロジック
+
+    1.repuest - >エンティティ
     2.enitity -> save
     3. save Entity -> response
     4.response return
@@ -43,10 +45,10 @@ public class UserBusiness {
 */
     }
 
-    /*1. email , password를 가지고 사용자 체크
-     * 2. user entity 로그인 확인
-     * 3. token 생성
-     * 4. token response*/
+    /*1. email、passwordを持ってユーザーをチェック
+     *2. user entity ログイン確認
+     *3. トークン生成
+     *4. token response*/
     public TokenResponse login(UserLoginRequest request) {
         var userEntity = userService.login(request.getEmail(), request.getPassword());
         var tokenResponse = tokenBusiness.issueToken(userEntity);

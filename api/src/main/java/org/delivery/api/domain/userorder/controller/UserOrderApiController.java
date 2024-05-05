@@ -20,7 +20,7 @@ import java.util.List;
 public class UserOrderApiController {
     private final UserOrderBusiness userOrderBusiness;
 
-    //사용자 주문
+    //ユーザーの注文
     @PostMapping("")
     public Api<UserOrderResponse> userOrder(
             @Valid
@@ -39,7 +39,7 @@ public class UserOrderApiController {
         return Api.OK(response);
     }
 
-    //현재 진행중인 주문건
+    //現在進行中の注文
     @GetMapping("/current")
     public Api<List<UserOrderDetailResponse>> current(
             @Parameter(hidden = true)
@@ -50,7 +50,7 @@ public class UserOrderApiController {
         return Api.OK(response);
     }
 
-    //과거 주문 내역
+    //過去の注文履歴
     @GetMapping("/history")
     public Api<List<UserOrderDetailResponse>> history(
             @Parameter(hidden = true)
@@ -61,7 +61,7 @@ public class UserOrderApiController {
         return Api.OK(response);
     }
 
-    //주문 1건에 대한 내역
+    //注文1件の履歴
     @GetMapping("/id/{orderId}")
     public Api<UserOrderDetailResponse> read(
             @Parameter(hidden = true)

@@ -20,7 +20,7 @@ import javax.validation.Valid;
 public class UserOpenApiController {
     private final UserBusiness userBusiness;
 
-    //사용자 가입 요청
+    //ユーザー登録リクエスト
     @PostMapping("/register")
     public Api<UserResponse> register(
             @Valid
@@ -30,7 +30,7 @@ public class UserOpenApiController {
         return Api.OK(response);
 
     }
-    //로그인
+    //ログイン
     @PostMapping("/login")
     public Api<TokenResponse> login(
          @Valid

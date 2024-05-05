@@ -1,0 +1,11 @@
+
+¡
+java:S2293Y"YReplace the type specification in this constructor call with the diamond operator ("<>").(‰°ÓÍüÿÿÿÿ8ı‰Å‰ã1J$f5b0df1d-2a47-43e9-aeaa-d080105a88cf
+ƒ
+java:S1193\"@Replace the usage of the "instanceof" operator by a catch block.(È¦í8†ŠÅ‰ã1J$568fcf03-6eca-4fb2-800c-fcf296f3fd56
+ƒ
+java:S1193_"@Replace the usage of the "instanceof" operator by a catch block.(Ã‰ßÇ8†ŠÅ‰ã1J$701641ef-5eb2-48c0-8710-173f9bd800d5
+‡
+java:S1128"DRemove this unused import 'org.delivery.api.common.error.ErrorCode'.(¢ÔõÒ8‰Õş‹ã1J$84ca1681-344b-4639-835d-81fec3ab77ff
+x
+java:S1128"6Remove this unused import 'javax.persistence.Convert'.(¹ü8‰Õş‹ã1J$12a47c87-9431-436c-85c2-ff3b281825f1

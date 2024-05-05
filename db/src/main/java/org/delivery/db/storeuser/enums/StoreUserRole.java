@@ -4,9 +4,9 @@ import lombok.AllArgsConstructor;
 
 @AllArgsConstructor
 public enum StoreUserRole {
-    MASTER("마스터"),
-    ADMIN("관리자"),
-    USER("일반유저"),
+    MASTER("マスター"),
+    ADMIN("管理者"),
+    USER("一般ユーザー"),
     ;
     private String description;
 }

@@ -12,7 +12,8 @@ import java.util.Map;
 import java.util.Objects;
 
 /*
- * token에 대한 도메인로직*/
+ *
+tokenのドメインロジック*/
 @RequiredArgsConstructor
 @Service
 public class TokenService {

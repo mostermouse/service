@@ -1,0 +1,15 @@
+
+t
+java:S1602,",Remove useless curly braces around statement(Õ»‰ÿÿÿÿÿ8‚¤Øç1J$e6932514-55a8-4cf7-a294-a010196a2e5e
+t
+java:S16022",Remove useless curly braces around statement(Ä‰ãÇøÿÿÿÿ8ƒ¤Øç1J$981730bb-c8ba-4815-bef5-177e553c2edc
+
+java:S16122"FReplace this lambda with method reference 'this.sseEmitter::complete'.(Ä‰ãÇøÿÿÿÿ8ƒ¤Øç1J$439d4b98-94a6-4802-8af5-0335572a5c89
+—
+java:S1128"ORemove this unused import 'com.fasterxml.jackson.core.JsonProcessingException'.(ßÔïÇûÿÿÿÿ8‡¤Øç1J$e868fca7-5878-45a7-a30a-9f05a16e364e
+p
+java:S1128"(Remove this unused import 'lombok.Data'.(÷í«ÿÿÿÿÿ8‡¤Øç1J$7d318567-f4be-44f8-b6a9-adc7811f705a
+¤
+java:S1128	"\Remove this unused import 'org.delivery.storeadmin.domain.sse.connection.SseConnectionPool'.(Ò«¶ÿÿÿÿÿ8‡¤Øç1J$ac9767de-46bc-4998-952a-46a5c10b41b2
+›
+java:S1128"SRemove this unused import 'org.springframework.beans.factory.annotation.Autowired'.(¡¸Îùÿÿÿÿ8‡¤Øç1J$6396b71a-0e8e-468e-b720-a46490cdea92

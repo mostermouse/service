@@ -34,10 +34,10 @@ public class UserOrderBusiness {
     private final StoreConverter storeConverter;
     private final UserOrderProducer userOrderProducer;
 
-    //1.사용자 , 메뉴 id
-    //2.userOrder 생성
-    //3.userOrderMenu 생성
-    //4.응답 생성
+    //1.ユーザー、メニューid
+    //2.userOrder 生成
+    //3.userOrderMenuの生成
+    //4.回答の生成
     public UserOrderResponse userOrder(User user, UserOrderRequest body) {
         var storeMenuEntityList = body.getStoreMenuIdList()
                 .stream()
@@ -59,12 +59,12 @@ public class UserOrderBusiness {
                     return userOrderMenuEntity;
                 })
                 .collect(Collectors.toList());
-        //주문내역 남기기
+        //注文履歴を残す
         userOrderMenuEntityList.forEach(it -> {
             userOrderMenuService.order(it);
         });
 
-        //비동기로 가맹점에 주문 알리기
+        //非同期で加盟店に注文を通知する
         userOrderProducer.sendOrder(newUserOrderEntity);
 
 
@@ -74,10 +74,10 @@ public class UserOrderBusiness {
 
     public List<UserOrderDetailResponse> current(User user) {
         var userOrderEntityList = userOrderService.current(user.getId());
-       //주문 1건씩 처리
+       //注文1件ずつ処理
         var userOrderDetailResponseList = userOrderEntityList.stream().map(it -> {
 
-           //사용자가 주문한 메뉴
+           //ユーザーが注文したメニュー
             var userOrderMenuEntityList = userOrderMenuService.getUserOrderMenu(it.getId());
             var storeMenuEntityList = userOrderMenuEntityList.stream()
                     .map(userOrderMenuEntity -> {
@@ -85,7 +85,7 @@ public class UserOrderBusiness {
                         return storeMenuEntity;
             }).collect(Collectors.toList());
 
-            //사용자가 주문한 스토어 TODO 리팩토링 필요
+            //ユーザーが注文したストア
             var storeEntity = storeService.getStoreWithThrow(storeMenuEntityList.stream().findFirst().get().getStoreId());
 
             return UserOrderDetailResponse.builder()
@@ -101,10 +101,10 @@ public class UserOrderBusiness {
 
     public List<UserOrderDetailResponse> history(User user) {
         var userOrderEntityList = userOrderService.history(user.getId());
-        //주문 1건씩 처리
+        //注文1件ずつ処理
         var userOrderDetailResponseList = userOrderEntityList.stream().map(it -> {
 
-            //사용자가 주문한 메뉴
+            //ユーザーが注文したメニュー
             var userOrderMenuEntityList = userOrderMenuService.getUserOrderMenu(it.getId());
             var storeMenuEntityList = userOrderMenuEntityList.stream()
                     .map(userOrderMenuEntity -> {
@@ -112,7 +112,7 @@ public class UserOrderBusiness {
                         return storeMenuEntity;
                     }).collect(Collectors.toList());
 
-            //사용자가 주문한 스토어 TODO 리팩토링 필요
+            //ユーザーが注文したストア
             var storeEntity = storeService.getStoreWithThrow(storeMenuEntityList.stream().findFirst().get().getStoreId());
 
             return UserOrderDetailResponse.builder()
@@ -130,7 +130,7 @@ public class UserOrderBusiness {
     public UserOrderDetailResponse read(User user, Long orderId){
         var userOrderEntity = userOrderService.getUserOrderWithOutStatusWithThrow(orderId, user.getId());
 
-        //사용자가 주문한 메뉴
+        //ユーザーが注文したメニュー
         var userOrderMenuEntityList = userOrderMenuService.getUserOrderMenu(userOrderEntity.getId());
         var storeMenuEntityList = userOrderMenuEntityList.stream()
                 .map(userOrderMenuEntity -> {
@@ -139,7 +139,7 @@ public class UserOrderBusiness {
                 })
                 .collect(Collectors.toList());
 
-        //사용자가 주문한 스토어 TODO 리팩토링 필요
+        //ユーザーが注文したストア
         var storeEntity = storeService.getStoreWithThrow(storeMenuEntityList.stream().findFirst().get().getStoreId());
 
         return UserOrderDetailResponse.builder()

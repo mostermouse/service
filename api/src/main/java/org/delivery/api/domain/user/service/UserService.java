@@ -12,7 +12,8 @@ import org.springframework.stereotype.Service;
 import java.time.LocalDateTime;
 import java.util.Optional;
 
-/*User 도메인 로직을 처리하는 서비스*/
+/*
+User ドメインロジックを処理するサービス*/
 @RequiredArgsConstructor
 @Service
 public class UserService {

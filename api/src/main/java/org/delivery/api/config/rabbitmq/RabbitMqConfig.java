@@ -31,7 +31,7 @@ public class RabbitMqConfig {
     public Binding binding(DirectExchange directExchange, Queue queue){
         return BindingBuilder.bind(queue).to(directExchange).with("delivery.key");
     }
-    //end queue 설정
+    //end queue 設定
     @Bean
     public RabbitTemplate rabbitTemplate(
             ConnectionFactory connectionFactory,

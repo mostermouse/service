@@ -17,12 +17,12 @@ public class ObjectMapperConfig {
 
         objectMapper.registerModule(new Jdk8Module());  //jdk 8 version late
         objectMapper.registerModule(new JavaTimeModule());  //local date
-        objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false); //모르는 json 무시
+        objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false); //知らないjson無視
         objectMapper.configure(SerializationFeature.FAIL_ON_EMPTY_BEANS,false);
 
-        //날씨 관련 직렬화
+
         objectMapper.disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);
-        //스네이크 케이스
+
         objectMapper.setPropertyNamingStrategy(new PropertyNamingStrategies.SnakeCaseStrategy());
         return objectMapper;
     }

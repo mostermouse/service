@@ -8,13 +8,13 @@ import java.util.List;
 import java.util.Optional;
 
 public interface StoreRepository extends JpaRepository<StoreEntity , Long> {
-    //특정 아이디 상태
+    //特定id状態
     //select * from store where id = ? and status = ? oreder by id desc limit 1
     Optional<StoreEntity> findFirstByIdAndStatusOrderByIdDesc(Long id, StoreStatus status);
-    //유효한 스토어 리스트
+    //有効なストアのリスト
     //select * from store where status = ? order by id desc
     List<StoreEntity> findAllByStatusOrderByIdDesc(StoreStatus status);
-    //유효한 특정 카테고리의 스토어 리스트
+    //有効な特定カテゴリーストアのリスト
     List<StoreEntity> findAllByStatusAndCategoryOrderByStar(StoreStatus status , StoreCategory storeCategory);
     //select * from store where name  = ? and status =? order by id desc limit 1
     Optional<StoreEntity> findFirstByNameAndStatusOrderByIdDesc(String name, StoreStatus status);
